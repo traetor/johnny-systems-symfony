@@ -1,9 +1,9 @@
 <?php
-// src/Service/JwtService.php
 
 namespace App\Service;
 
 use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 class JwtService
 {
@@ -22,5 +22,10 @@ class JwtService
         ];
 
         return JWT::encode($payload, $this->jwtSecret, 'HS256');
+    }
+
+    public function decodeToken(string $token): object
+    {
+        return JWT::decode($token, new Key($this->jwtSecret, 'HS256'));
     }
 }

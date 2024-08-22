@@ -62,6 +62,7 @@ class AuthController extends AbstractController
      *     )
      * )
      */
+    #[Route('/login', name: 'app_login', methods: ['POST'])]
     public function login(Request $request, UserPasswordEncoderInterface $passwordEncoder): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
