@@ -1,5 +1,8 @@
+# config/routes.yaml
+
+# Define your application's controllers
 controllers:
     resource:
-        path: ../src/Controller/
+        path: '../src/Controller/'
         namespace: App\Controller
     type: attribute
